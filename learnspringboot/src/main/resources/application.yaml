@@ -1,0 +1,25 @@
+#server:
+#  port:
+#    9090
+
+
+
+spring:
+  application:
+    name: profileproperties
+  profiles:
+    active: dev
+
+profileproperties:
+  url: https://google.com
+  username: defaultuser
+  key: defaultkey
+
+
+logging:
+   level:
+     org:
+       springframework: trace
+
+
+
