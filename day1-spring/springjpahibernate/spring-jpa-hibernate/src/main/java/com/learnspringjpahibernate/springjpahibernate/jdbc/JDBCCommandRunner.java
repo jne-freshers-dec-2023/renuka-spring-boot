@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JDBCCommandRunner implements CommandLineRunner {
-    @Autowired
-      JDBCRepository jdbcrepo;
+   @Autowired
+     JDBCRepository jdbcrepo;
 
-    @Override
-    public void run(String... args) throws Exception {
-        jdbcrepo.insert();
-    }
+   @Override
+   public void run(String... args) throws Exception {
+       jdbcrepo.insert();
+   }
 }
