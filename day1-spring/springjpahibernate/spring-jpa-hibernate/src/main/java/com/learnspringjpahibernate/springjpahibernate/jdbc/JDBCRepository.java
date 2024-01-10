@@ -21,6 +21,6 @@ public class JDBCRepository {
     public  void insert(){
         springjdbctemplate.update(INSERT_QUERY);
     }
-
+       
 
 }
