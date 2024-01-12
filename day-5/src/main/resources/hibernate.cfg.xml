@@ -1,0 +1,18 @@
+
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
+    <session-factory>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/mapping</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">root</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hbm2ddl.auto">create</property>
+        <property name="show_sql">true</property>
+
+        <mapping class="org.example.inheritancemapping.TeamIndia"/>
+        <mapping class="org.example.inheritancemapping.BatsMan"/>
+        <mapping class="org.example.inheritancemapping.Boller"/>
+
+<!--        <mapping resource="hibernate.hbm.xml"/>-->
+    </session-factory>
+</hibernate-configuration>
