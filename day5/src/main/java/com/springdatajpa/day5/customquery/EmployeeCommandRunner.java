@@ -58,6 +58,15 @@ public class EmployeeCommandRunner implements CommandLineRunner {
         empsalary.forEach(e-> System.out.println(e));
 
 
+        //@Query
+        List<Employee> emps= employeeJpaRepo.getAllUser();
+        emps.forEach(ele-> System.out.println(ele));
 
+        Employee empslist= employeeJpaRepo.findByLname("Wilson");
+        System.out.println(empslist);
+
+        List<Employee> empsal= employeeJpaRepo.findBySalaryBetween(2500000, 4000000);
+        System.out.println("Employees salary between 2500000 and 4000000");
+        empsal.forEach(ele-> System.out.println(""+ele));
     }
 }
