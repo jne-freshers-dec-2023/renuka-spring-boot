@@ -9,8 +9,8 @@ import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 @RestControllerAdvice
 public class ResponseEntityException {
-    @ExceptionHandler(userNotFoundException.class)
-    public ResponseEntity<ErrorDetails>  usernotFoundException(userNotFoundException ex){
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<ErrorDetails>  usernotFoundException(UserNotFoundException ex){
 
         String message= ex.getMessage();
         System.out.println(message);
@@ -18,19 +18,8 @@ public class ResponseEntityException {
         return  new ResponseEntity<ErrorDetails>(errorDetails,NOT_FOUND);
     }
 
-    @ExceptionHandler(ValidationException.class)
-    public ResponseEntity<ErrorDetails>  validationException(ValidationException ex){
-
-        String message= ex.getMessage();
-        System.out.println(message);
-        ErrorDetails errorDetails= new ErrorDetails(false,message);
-        return  new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.BAD_REQUEST);
-    }
-
-
-
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorDetails>  exceptionHandler(userNotFoundException ex){
+    public ResponseEntity<ErrorDetails>  exceptionHandler(UserNotFoundException ex){
 
         String message= ex.getMessage();
         System.out.println(message);

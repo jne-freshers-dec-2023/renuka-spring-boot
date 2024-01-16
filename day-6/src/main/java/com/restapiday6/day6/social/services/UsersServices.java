@@ -5,16 +5,19 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 @Component
 public class UsersServices {
     public static List<Users> users = new ArrayList<>();
+
     private static int  idCount=0;
     static {
         users.add(new Users(++idCount,"renu", 9552854490L));
         users.add(new Users(++idCount,"shambu",9437628289L));
         users.add(new Users(++idCount,"manju",7464387348L));
+
     }
 
 
@@ -26,12 +29,12 @@ public class UsersServices {
     public Users findById(int id){
         Predicate<Users> predicate= user-> user.getId()== id;
        return  users.stream().filter(predicate).findFirst().orElse(null);
+
     }
 
-    public Users deleteById(int id){
+    public Optional<Users> deleteById(int id){
         Predicate<Users> predicate= user-> user.getId()== id;
         users.removeIf(predicate);
-
         return null;
     }
 

@@ -9,6 +9,7 @@ public class Day6Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Day6Application.class, args);
 		System.out.println("it's working!");
+	
 	}
 
 }
