@@ -1,0 +1,26 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "org.example.inheritancemapping.TeamIndia" table = "Team_India" discriminator-value="staff">
+        <id name = "playersid" column = "player_id">
+            <generator class="increment"/>
+        </id>
+        <discriminator type="string" column="category"></discriminator>
+        <property name = "fname" column = "first_name" type = "string"/>
+        <property name = "lname" column = "last_name" type = "string"/>
+
+        <subclass name="org.example.inheritancemapping.BatsMan" discriminator-value="bat">
+            <property name="batting_hand" column="batting_hand" />
+            <property name="highest_score" column="highest_score"/>
+        </subclass>
+
+        <subclass name="org.example.inheritancemapping.Boller" discriminator-value="boller">
+            <property name="bowler_hand" column="bowler_hand"/>
+            <property name="best_figure" column="best_figure"/>
+        </subclass>
+
+    </class>
+</hibernate-mapping>
